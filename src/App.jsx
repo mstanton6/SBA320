@@ -3,12 +3,12 @@ import './App.css'
 
 function App() {
   const [movie, setMovie] = useState(null)
-  let title = "Clueless"
   const apiKey = "171e8e29"
-  const apiURL = `http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
 
-  async function getMovies() {
+  async function getMovies(title) {
     try {
+      const apiURL = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
+
       // makes request to URL for data
       let response = await fetch(apiURL);
 
@@ -30,10 +30,14 @@ function App() {
   return (
     <>
       <div>
+        <h1>{movie?.Title}</h1>
+        <h2>{movie?.Year}</h2>
+        <h2>{movie?.Rated}</h2>
+        <h2>{movie?.Released}</h2>
+        <h2>{movie?.Genre}</h2>
       </div>
     </>
   )
 }
-
 
 export default App
