@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Form from "./components/Form";
 
 function App() {
   const [movie, setMovie] = useState(null)
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <div>
+        <Form moviesearch={getMovies} />
         <h1>{movie?.Title}</h1>
         <h2>{movie?.Year}</h2>
         <h2>{movie?.Rated}</h2>
