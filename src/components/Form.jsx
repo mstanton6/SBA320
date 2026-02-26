@@ -1,7 +1,6 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 
 export default function Form (props) {
-  // State to hold the data of our form
   const [formData, setFormData] = useState({
     searchterm: "",
   });
@@ -20,7 +19,6 @@ export default function Form (props) {
   };
 
   return (
-    <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -30,6 +28,5 @@ export default function Form (props) {
         />
         <input type="submit" value="submit" />
       </form>
-    </div>
   );
 }

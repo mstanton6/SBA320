@@ -25,7 +25,7 @@ function App() {
 
   // This will run on the first render but not on subsquent renders
   useEffect(() => {
-    getMovies("Clueless");
+    getMovies("Back to the future");
   }, []);
 
   return (
@@ -34,6 +34,7 @@ function App() {
         <Form moviesearch={getMovies} />
         <h1>{movie?.Title}</h1>
         <h2>{movie?.Year}</h2>
+        <img src={movie?.Poster} alt={movie?.Title} />
         <h2>{movie?.Rated}</h2>
         <h2>{movie?.Released}</h2>
         <h2>{movie?.Genre}</h2>
