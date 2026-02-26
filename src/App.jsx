@@ -4,13 +4,11 @@ import Form from "./components/Form";
 
 function App() {
   const [book, setBook] = useState(null)
-  //const apiKey = "171e8e29"
   const apiKey = "AIzaSyCq3QKEwLLoOnR0i8gnn4VQ-D8byD3TYUw"
 
   async function getBooks(title) {
     try {
-      const safeQuery = encodeURIComponent(title);
-     // const apiURL = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
+    const safeQuery = encodeURIComponent(title);
      const apiURL = `https://www.googleapis.com/books/v1/volumes?q=${safeQuery}&maxResults=1&key=${apiKey}`;
 
       // makes request to URL for data

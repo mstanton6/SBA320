@@ -1,16 +1,45 @@
-# React + Vite
+# My Application Name and description
+ This is a book Application. It downloads book information from the google books api. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+How to Start
+============
+You start the server by "npm run dev"
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Example usage
 
-## React Compiler
+The user types in the name of the book and clicks submit. The book information is displayed along with an image of the book.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+# Technologies Used:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React
+
+JavaScript              .
+
+Google Book API               
+
+
+# link to my gitGitHub account: https://github.com/mstanton6/SBA320.git
+
+
+# Installation and Usage
+
+To use this project locally:
+
+1.  **Clone the repository:**
+
+    git clone https://github.com/mstanton6/SBA320.git
+    
+2.  **Navigate to the project directory:**
+
+    cd SBA320
+
+3. Run "npm run dev"
+
+5.  Open a browser and go to http://localhost:5176/ or whereever the start up says.
+
+# Contributions
+- Thank you to the following for making contributions to my project      
+1. https://www.google.com/
+
