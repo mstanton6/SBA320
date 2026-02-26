@@ -7,7 +7,7 @@ function App() {
   //const apiKey = "171e8e29"
   const apiKey = "AIzaSyCq3QKEwLLoOnR0i8gnn4VQ-D8byD3TYUw"
 
-  async function getMovies(title) {
+  async function getBooks(title) {
     try {
       const safeQuery = encodeURIComponent(title);
      // const apiURL = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
@@ -27,13 +27,13 @@ function App() {
 
   // This will run on the first render but not on subsquent renders
   useEffect(() => {
-    getMovies("The Great Gatsby");
+    getBooks("The Great Gatsby");
   }, []);
 
   return (
     <>
       <div>
-        <Form moviesearch={getMovies} />
+        <Form booksearch={getBooks} />
         <br />
         <b>Title:</b> {book?.items?.[0]?.volumeInfo?.title}
         <br /><br />

@@ -15,7 +15,7 @@ export default function Form (props) {
     // Prevent page from refreshing on form submission
     event.preventDefault();
     // Pass the search term to moviesearch prop, which is App's getMovies function
-    props.moviesearch(formData.searchterm);
+    props.booksearch(formData.searchterm);
   };
 
   return (
