@@ -3,20 +3,22 @@ import './App.css'
 import Form from "./components/Form";
 
 function App() {
-  const [movie, setMovie] = useState(null)
-  const apiKey = "171e8e29"
+  const [book, setBook] = useState(null)
+  //const apiKey = "171e8e29"
+  const apiKey = "AIzaSyCq3QKEwLLoOnR0i8gnn4VQ-D8byD3TYUw"
 
   async function getMovies(title) {
     try {
-      const apiURL = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
+      const safeQuery = encodeURIComponent(title);
+     // const apiURL = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`;
+     const apiURL = `https://www.googleapis.com/books/v1/volumes?q=${safeQuery}&maxResults=1&key=${apiKey}`;
 
       // makes request to URL for data
       let response = await fetch(apiURL);
 
       // parse the incoming data into JSON so we can use it
       response = await response.json();
-      setMovie(response);
-      console.log(response);
+      setBook(response);
 
     } catch (err) {
       console.error(err);
@@ -25,19 +27,29 @@ function App() {
 
   // This will run on the first render but not on subsquent renders
   useEffect(() => {
-    getMovies("Back to the future");
+    getMovies("The Great Gatsby");
   }, []);
 
   return (
     <>
       <div>
         <Form moviesearch={getMovies} />
-        <h1>{movie?.Title}</h1>
-        <h2>{movie?.Year}</h2>
-        <img src={movie?.Poster} alt={movie?.Title} />
-        <h2>{movie?.Rated}</h2>
-        <h2>{movie?.Released}</h2>
-        <h2>{movie?.Genre}</h2>
+        <br />
+        <b>Title:</b> {book?.items?.[0]?.volumeInfo?.title}
+        <br /><br />
+        <img
+            src={book?.items?.[0]?.volumeInfo?.imageLinks?.thumbnail}
+            alt={book?.items?.[0]?.volumeInfo?.title}
+        />
+        <br /><br />
+        <b>Author(s:)</b> {book?.items?.[0]?.volumeInfo?.authors.join(', ')}
+        <br /><br />
+        <b>Publisher:</b> {book?.items?.[0]?.volumeInfo?.publisher}
+        <br /><br />
+        <b>Published Date:</b> {book?.items?.[0]?.volumeInfo?.publishedDate}
+        <br /><br />
+        <b>Page Count:</b> {book?.items?.[0]?.volumeInfo?.pageCount}
+
       </div>
     </>
   )
