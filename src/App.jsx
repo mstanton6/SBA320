@@ -4,7 +4,8 @@ import Form from "./components/Form";
 
 function App() {
   const [book, setBook] = useState(null)
-  const apiKey = "AIzaSyCq3QKEwLLoOnR0i8gnn4VQ-D8byD3TYUw"
+ // const apiKey = "AIzaSyCq3QKEwLLoOnR0i8gnn4VQ-D8byD3TYUw"
+ const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
   async function getBooks(title) {
     try {

@@ -10,6 +10,14 @@ You start the server by "npm run dev"
 
 The user types in the name of the book and clicks submit. The book information is displayed along with an image of the book.
 
+Here are 3 book names you can use
+=================================
+Pride and Prejudice
+
+The Great Gatsby
+
+To Kill a Mockingbird
+
 
 # Technologies Used:
 
